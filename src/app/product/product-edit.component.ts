@@ -27,7 +27,10 @@ export class ProductEditComponent implements OnInit{
 
     save(): void{
         this.productService.save(this.product).subscribe({
-            next: product => {console.log('Salvo com Sucesso!',product),alert('Produto Editado Com Sucesso!');},
+            next: product => { alert('Produto Editado Com Sucesso!');
+            console.log('Editado com Sucesso!',product);
+            this.productService.retrieveAll();
+        },
             error: err => console.log('Error',err)
         });
     }

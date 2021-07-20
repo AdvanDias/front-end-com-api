@@ -31,7 +31,7 @@
             <td>R$ {{ product.total.toString() | replace: '.' : ',' }}</td>
             <td>{{ product.date | date: 'dd/MM/yyy'}}</td>
             <td>
-                <a [routerLink]="['/product/edit',product.id,product.data_criacao]" class="btn btn-primary me-md-2">Edit</a>
+                <a [routerLink]="['/product/edit',product.id,product.data_criacao]" class="btn btn-primary me-md-2">Editar</a>
                 <button (click)="deleteById(product.id)" class="btn btn-danger">Delete</button>
             </td>
         </tr>

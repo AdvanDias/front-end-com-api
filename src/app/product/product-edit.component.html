@@ -45,8 +45,9 @@
         </div>
     </div>
     <br>
-    <button [disabled]="productForm.invalid" (click)="save()"  [routerLink]="['/product/',product.id_empresa,product.data_criacao]"
+    <button [disabled]="productForm.invalid" (click)="save()"
     type="button" class="btn btn-primary me-md-2">Salvar</button>
     <button [routerLink]="['/product/',product.id_empresa,product.data_criacao]" class="btn btn-secondary">Voltar</button>
 
 </form>
+<br>
