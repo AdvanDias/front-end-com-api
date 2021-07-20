@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { ProductService } from "../product.service";
 import { Product } from "./product";
-import { ActivatedRoute } from "@angular/router";
 
 @Component({
     templateUrl: 'product-list.component.html',
@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit{
     }
     
     ngOnInit(): void {
-       this.retrieveAll()
+       this.retrieveAll();
     }
 
     set filter(value: string){
@@ -53,7 +53,7 @@ export class ProductListComponent implements OnInit{
     }
 
     deleteById(productId: number): void{
-        let valid = confirm('Deseja Continuar a Operação ?');
+        let valid = confirm('Deseja MESMO excluir esse item ?');
         if (valid) {
             this.productService.deleteById(productId).subscribe({
                 next: () => {
