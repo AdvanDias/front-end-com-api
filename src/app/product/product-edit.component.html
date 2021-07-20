@@ -1,0 +1,52 @@
+<h2>Editar Produto</h2>
+<hr/>
+<form #productForm="ngForm" *ngIf="product">
+    <div class=" form-group row">
+        <label class="col-sm-2 col-form-label">Nome</label>
+        <div class="col-sm-10">
+            <input [(ngModel)]="product.nome" required name="nome" #productNome="ngModel" [ngClass]="{'is-invalid': productNome.invalid}" class="form-control">
+           
+            <div class="invalid-feedback">
+                <span>Nome do Produto é Obrigatório!</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class=" form-group row">
+        <label class="col-sm-2 col-form-label">Preço</label>
+        <div class="col-sm-10">
+            <input [(ngModel)]="product.price" required name="price" type="number" #productPrice="ngModel" [ngClass]="{'is-invalid': productPrice.invalid}" class="form-control">
+           
+            <div class="invalid-feedback">
+                <span>O campo Preço é Obrigatório!</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class=" form-group row">
+        <label class="col-sm-2 col-form-label">Quantidade</label>
+        <div class="col-sm-10">
+            <input [(ngModel)]="product.qntd" required name="qntd" type="number" #productQntd="ngModel" [ngClass]="{'is-invalid': productQntd.invalid}" class="form-control">
+           
+            <div class="invalid-feedback">
+                <span>A Quantidade é Obrigatória!</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class=" form-group row">
+        <label class="col-sm-2 col-form-label">Data Compra</label>
+        <div class="col-sm-10">
+            <input [(ngModel)]="product.date" required name="date" type="date" #productdate="ngModel" [ngClass]="{'is-invalid': productdate.invalid}" class="form-control">
+           
+            <div class="invalid-feedback">
+                <span>A Quantidade é Obrigatória!</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <button [disabled]="productForm.invalid" (click)="save()"  [routerLink]="['/product/',product.id_empresa,product.data_criacao]"
+    type="button" class="btn btn-primary me-md-2">Salvar</button>
+    <button [routerLink]="['/product/',product.id_empresa,product.data_criacao]" class="btn btn-secondary">Voltar</button>
+
+</form>

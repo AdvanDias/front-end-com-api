@@ -1,0 +1,45 @@
+<h2>Adicionar Item</h2>
+<form #productdoisForm="ngForm">
+    <div class=" form-group row">
+        <div class="col-sm-4">
+            <input [(ngModel)]="productCreate.nome" required name="nome" #productNome="ngModel" 
+            [ngClass]="{'is-invalid': productNome.invalid}" class="form-control" placeholder="Nome">
+           
+            <div class="invalid-feedback">
+                <span>Nome do Produto</span>
+            </div>
+        </div>
+    
+        <div class="col-sm-2">
+            <input [(ngModel)]="productCreate.price" required name="price" type="number" #productPrice="ngModel" 
+            [ngClass]="{'is-invalid': productPrice.invalid}" class="form-control" >
+           
+            <div class="invalid-feedback">
+                <span>Preço do Produto</span>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <input [(ngModel)]="productCreate.qntd" required name="qntd" type="number" #productQntd="ngModel" 
+            [ngClass]="{'is-invalid': productQntd.invalid}" class="form-control">
+           
+            <div class="invalid-feedback">
+                <span>Quantidade</span>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <input [(ngModel)]="productCreate.date" required name="date" type="date" #productdate="ngModel"
+            [ngClass]="{'is-invalid': productdate.invalid}" class="form-control" placeholder="Data de Cadastro">
+           
+            <div class="invalid-feedback">
+                <span>Data da Compra</span>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <button [disabled]="productdoisForm.invalid" (click)="created()"
+            type="button" class="btn btn-primary me-md-2">Salvar</button>
+            <button [routerLink]="['/empresa']" class="btn btn-secondary">Voltar</button>
+        </div>
+    </div>
+   
+</form>

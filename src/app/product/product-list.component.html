@@ -1,0 +1,43 @@
+<br>
+<app-product-create></app-product-create>
+<br>
+<div class=" form-group row">
+    <label class="col-sm-2 col-form-label">Pesquisar Item</label>
+
+    <div class="col-sm-10">
+        <input [(ngModel)]="filter" class="form-control" id="filtroitem">
+    </div>
+</div>
+
+<br>
+<div class="table-wrapper-scroll-y my-custom-scrollbar" id="tabelaproduct">
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Qntd</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Total</th>
+            <th scope="col">Data</th>
+            <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of filtraproduct">
+            <td>{{ product.nome }}</td>
+            <td>{{ product.qntd }}</td>
+            <td>R$ {{ product.price.toString() | replace: '.' : ',' }}</td>
+            <td>R$ {{ product.total.toString() | replace: '.' : ',' }}</td>
+            <td>{{ product.date | date: 'dd/MM/yyy'}}</td>
+            <td>
+                <a [routerLink]="['/product/edit',product.id,product.data_criacao]" class="btn btn-primary me-md-2">Edit</a>
+                <button (click)="deleteById(product.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
+  <br>
+

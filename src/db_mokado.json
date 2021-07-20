@@ -1,0 +1,38 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "nome": "teste",
+      "qntd": 2,
+      "price": 40,
+      "date": "01-01-2017",
+      "total": 20,
+      "id_empresa": 1
+    },
+    {
+      "nome": "via aplicação",
+      "price": 12,
+      "qntd": 2,
+      "date": "2021-07-07",
+      "data_criacao": "01-01-2017",
+      "id_empresa": "2",
+      "id": 3
+    }
+  ],
+  "empresa": [
+    {
+      "nome": "empresateste2",
+      "qntd_itens": 2,
+      "data": "01-01-2017",
+      "total": 20,
+      "id": 2
+    },
+    {
+      "nome": "NovoCardViaAplica",
+      "total": 0,
+      "qntd_itens": 0,
+      "data": "2021-07-20",
+      "id": 3
+    }
+  ]
+}
